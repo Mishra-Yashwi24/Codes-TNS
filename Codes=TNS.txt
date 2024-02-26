@@ -1,0 +1,226 @@
+1)import java.io.*;
+ 
+class Geeks {
+ 
+    public static void main(String a[])
+    {
+        int x = 10;
+        int y = 5;
+        x = x + y;
+        y = x - y;
+        x = x - y;
+        System.out.println("After swapping:"
+                           + " x = " + x + ", y = " + y);
+    }
+}
+
+
+
+2)public class CheckPositiveOrNegativeExample1  
+{  
+public static void main(String[] args)   
+{  
+//number to be check  
+int num=912;  
+//checks the number is greater than 0 or not  
+if(num>0)  
+{  
+System.out.println("The number is positive.");  
+}  
+//checks the number is less than 0 or not  
+else if(num<0)  
+{  
+System.out.println("The number is negative.");  
+}  
+//executes when the above two conditions return false  
+else  
+{  
+System.out.println("The number is zero.");  
+}  
+}  
+}  
+
+
+3)import java.util.Scanner;  
+public class LargestNumberExample2  
+{  
+public static void main(String[] args)   
+{  
+int a, b, c, largest;  
+//object of the Scanner class  
+Scanner sc = new Scanner(System.in);  
+//reading input from the user  
+System.out.println("Enter the first number:");  
+a = sc.nextInt();  
+System.out.println("Enter the second number:");  
+b = sc.nextInt();  
+System.out.println("Enter the third number:");  
+c = sc.nextInt();  
+largest = c > (a > b ? a : b) ? c : ((a > b) ? a : b);  
+System.out.println("The largest number is: "+largest);  
+}  
+}  
+
+
+
+4)public static void main(String[] args) {  
+    int i=1;  
+    while(i<=10){  
+        System.out.println(i);  
+    i++;  
+    }  
+}  
+}  
+ 
+
+
+
+5)public class Main {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 20;
+        int num3 = 15;
+        int biggest;
+
+        switch (1) {
+            case 1:
+                biggest = num1;
+                break;
+            case 2:
+                biggest = num2;
+                break;
+            case 3:
+                biggest = num3;
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+
+        switch (2) {
+            case 1:
+                if (num2 > biggest)
+                    biggest = num2;
+                break;
+            case 2:
+                if (num3 > biggest)
+                    biggest = num3;
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+
+        System.out.println("The biggest number is: " + biggest);
+    }
+}
+
+
+6)char arr[4]={'Y','a','s'};
+    char a=tolower(arr[0]);
+    std::cout<<a;
+    //std::cout<<"Hello World";
+    /*int array[7]={1,2,3,4,5,6,7};
+    int evencount=0;
+    for(int i=0;i<=8;i++){
+        if(array[i]%2==0){
+            std::cout<<array[i]<<"\n";
+            evencount++;
+        }
+    }
+    std::cout<<evencount;*/
+
+7)#include <iostream>
+#include <string>
+#include <cctype> // for toupper and tolower functions
+using namespace std;
+
+int main() {
+    string inputString;
+    
+    // Input string from the user
+    cout << "Enter a string: ";
+    getline(cin, inputString);
+    
+    // Check if the string is not empty
+    if (!inputString.empty()) {
+        // Convert the first character to its opposite case
+        if (islower(inputString[0])) {
+            inputString[0] = toupper(inputString[0]); // Convert to uppercase
+        } else if (isupper(inputString[0])) {
+            inputString[0] = tolower(inputString[0]); // Convert to lowercase
+        }
+        
+        // Print the modified string
+        cout << "Modified string: " << inputString << endl;
+    } else {
+        cout << "String is empty." << endl;
+    }
+
+    return 0;
+}
+
+
+8)#include <iostream>
+using namespace std;
+int stack[100], n=100, top=-1;
+void push(int val) {
+   if(top>=n-1)
+   cout<<"Stack Overflow"<<endl;
+   else {
+      top++;
+      stack[top]=val;
+   }
+}
+void pop() {
+   if(top<=-1)
+   cout<<"Stack Underflow"<<endl;
+   else {
+      cout<<"The popped element is "<< stack[top] <<endl;
+      top--;
+   }
+}
+void display() {
+   if(top>=0) {
+      cout<<"Stack elements are:";
+      for(int i=top; i>=0; i--)
+      cout<<stack[i]<<" ";
+      cout<<endl;
+   } else
+   cout<<"Stack is empty";
+}
+int main() {
+   int ch, val;
+   cout<<"1) Push in stack"<<endl;
+   cout<<"2) Pop from stack"<<endl;
+   cout<<"3) Display stack"<<endl;
+   cout<<"4) Exit"<<endl;
+   do {
+      cout<<"Enter choice: "<<endl;
+      cin>>ch;
+      switch(ch) {
+         case 1: {
+            cout<<"Enter value to be pushed:"<<endl;
+            cin>>val;
+            push(val);
+            break;
+         }
+         case 2: {
+            pop();
+            break;
+         }
+         case 3: {
+            display();
+            break;
+         }
+         case 4: {
+            cout<<"Exit"<<endl;
+            break;
+         }
+         default: {
+            cout<<"Invalid Choice"<<endl;
+         }
+      }
+   }while(ch!=4);
+   return 0;
+}
